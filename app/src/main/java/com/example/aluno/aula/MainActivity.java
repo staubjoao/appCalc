@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText textNum1;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMais = (Button) findViewById(R.id.buttonMais);
         buttonMenos = (Button) findViewById(R.id.buttonMenos);
         buttonMult = (Button) findViewById(R.id.buttonMult);
-        buttonDivi = (Button) findViewById(R.id.buttonIgual);
+        buttonDivi = (Button) findViewById(R.id.buttonDivi);
         buttonIgual = (Button) findViewById(R.id.buttonIgual);
         textOper = (TextView) findViewById(R.id.textOper);
         textResult = (TextView) findViewById(R.id.textResult);
@@ -68,6 +69,69 @@ public class MainActivity extends AppCompatActivity {
         buttonIgual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                if(op == 1){
+                    try{
+                        Double num1 = Double.parseDouble(textNum1.getText().toString());
+                        Double num2 = Double.parseDouble(textNum2.getText().toString());
+
+                        Double total = num1 + num2;
+
+                        textResult.setText(total.toString());
+
+                    }catch (Exception e){
+                        Toast.makeText(MainActivity.this, "Houve um problema. Tente novamente!", Toast.LENGTH_SHORT).show();
+                    }
+
+                    textOper.setText("");
+
+                }else if(op ==2){
+                    try{
+                        Double num1 = Double.parseDouble(textNum1.getText().toString());
+                        Double num2 = Double.parseDouble(textNum2.getText().toString());
+
+                        Double total = num1 - num2;
+
+                        textResult.setText(total.toString());
+
+                    }catch (Exception e){
+                        Toast.makeText(MainActivity.this, "Houve um problema. Tente novamente!", Toast.LENGTH_SHORT).show();
+                    }
+
+                    textOper.setText("");
+
+                }else if(op == 3){
+                    try{
+                        Double num1 = Double.parseDouble(textNum1.getText().toString());
+                        Double num2 = Double.parseDouble(textNum2.getText().toString());
+
+                        Double total = num1 * num2;
+
+                        textResult.setText(total.toString());
+
+                    }catch (Exception e){
+                        Toast.makeText(MainActivity.this, "Houve um problema. Tente novamente!", Toast.LENGTH_SHORT).show();
+                    }
+
+                    textOper.setText("");
+
+                }else if(op == 4){
+                    try{
+                        Double num1 = Double.parseDouble(textNum1.getText().toString());
+                        Double num2 = Double.parseDouble(textNum2.getText().toString());
+
+                        Double total = num1 / num2;
+
+                        textResult.setText(total.toString());
+
+                    }catch (Exception e){
+                        Toast.makeText(MainActivity.this, "Houve um problema. Tente novamente!", Toast.LENGTH_SHORT).show();
+                    }
+
+                    textOper.setText("");
+
+                }
 
             }
         });
